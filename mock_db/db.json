@@ -1,0 +1,9 @@
+{
+  "prestations": [
+    { "id": 1, "typePresta": "formation", "client": "M. Martin", "nbJours": 5, "tjmHt": 800, "tauxTva": 20, "state": "Annulé" },
+    { "id": 2, "typePresta": "formation", "client": "M. Fournier", "nbJours": 10, "tjmHt": 800, "tauxTva": 20, "state": "Option" }
+  ],
+  "clients": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ]
+}

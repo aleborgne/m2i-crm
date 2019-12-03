@@ -74,3 +74,22 @@ Router - Preloading
 -----
 https://angular.io/guide/router#preloading-background-loading-of-feature-areas
 LazyLoad au début de l'application pour un render plus rapide, puis chargement des modules en lazyload en background.
+
+
+
+
+
+Tableau Prestations
+-----
+Fake server : https://github.com/typicode/json-server#getting-started
+
+Création du Module "share" dans lequel on place les enum, interfaces, directives, etc.
+Pas besoin de déclarer les enum car pas de Decorator.
+
+
+
+
+
+A Rechercher
+-----
+obj?: Partial<Prestation> ???
