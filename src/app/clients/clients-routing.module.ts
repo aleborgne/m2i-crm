@@ -5,7 +5,7 @@ import { PageListClientsComponent } from './pages/page-list-clients/page-list-cl
 
 
 const routes: Routes = [
-  { path: 'clients', component: PageListClientsComponent },
+  { path: '', component: PageListClientsComponent },
 ];
 
 @NgModule({

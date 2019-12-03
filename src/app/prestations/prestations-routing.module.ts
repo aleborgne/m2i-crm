@@ -5,7 +5,7 @@ import { PageListPrestationsComponent } from './pages/page-list-prestations/page
 
 
 const routes: Routes = [
-  { path: 'prestations', component: PageListPrestationsComponent },
+  { path: '', component: PageListPrestationsComponent },
 ];
 
 @NgModule({
