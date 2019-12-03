@@ -1,3 +1,4 @@
+import { PrestationsRoutingModule } from './prestations-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageListPrestationsComponent } from './pages/page-list-prestations/page-list-prestations.component';
@@ -7,7 +8,8 @@ import { PageListPrestationsComponent } from './pages/page-list-prestations/page
 @NgModule({
   declarations: [PageListPrestationsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    PrestationsRoutingModule
   ]
 })
 export class PrestationsModule { }

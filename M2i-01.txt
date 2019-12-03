@@ -1,6 +1,21 @@
 Théorie
 -----
 
+VSCode Extensions
+-----
+Angular Essentials
+AngularDocs for VSCode (use Ng schematics)
+indent-rainbow
+Auto import
+Auto rename tag
+CSS peek
+Sass Variable Helper
+Material Icon theme
+
+
+
+
+
 ES6
 -----
 

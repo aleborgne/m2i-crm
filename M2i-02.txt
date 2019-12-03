@@ -22,3 +22,47 @@ Avantages:
 clareté architecture avec un dossier Pages pour chaque module
 utilisation du Router qui utilise les components
 Component parent envoie des "data brutes" aux component enfants. C'est le controleur en gros.
+
+
+
+
+
+LifeCycle Hooks
+-----
+https://angular.io/guide/lifecycle-hooks#lifecycle-sequence
+Ensemble de fonction appelé de manière séquentiel pour mettre à jour les vues
+
+ngOnChanges()
+appelé 1 fois juste après le constructor puis lorsque les propriétés bindées changent de valeur.
+Uniquement des types primitifs (string, number...)
+Permet de recharger la vue.
+Decorator @Input() permet de binder la prop component parent -> component enfant
+
+ngOnInit()
+
+ngDoCheck()
+Pour les propriété de type (Objet, Array...)
+
+
+
+
+
+Router
+-----
+method .forRoot() appelée 1 fois pr initialiser la conf du Module
+
+LazyLoading d'un component via le router
+https://angular.io/guide/router#lazy-loading-route-configuration
+
+Inspecter automatiquement la config du router dans la console
+https://angular.io/guide/router#inspect-the-routers-configuration
+
+Pour instancier le bon component associé à une route
+https://angular.io/guide/router#router-outlet
+
+
+Utiliser la methode forChild pour importer la config du Router dans un module enfant "lazy loadé"
+RouterModule.forChild(routes)
+On utilisera forRoot(routes) dans le module principal.
+
+CommonModule importe toutes les directives basiques ngIf, ngFor,...

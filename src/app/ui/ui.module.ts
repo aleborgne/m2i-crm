@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CoderbaseUiModule } from '@coderbase/ui';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { UiComponent } from './components/ui/ui.component';
-import { CoderbaseUiModule } from '@coderbase/ui';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { CoderbaseUiModule } from '@coderbase/ui';
   exports: [UiComponent],
   imports: [
     CoderbaseUiModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class UiModule { }
