@@ -1,0 +1,174 @@
+Théorie
+-----
+
+ES6
+-----
+
+Destructuring
+
+let fruit = ['a', 'b'];
+let veget = ['c', 'd'];
+let all = [...fruit, ...veget]; // => ['a','b','c','d']
+
+Decorators
+Permet d'ajouter des metadata aux class
+https://medium.com/jsguru/javascript-decorators-dac7d4b6bba3
+
+
+
+
+
+Observables
+-----
+
+Design pattern Observable remplace les Promise
+http://reactivex.io/
+RxJS : Propose outils pour la programmation réactive JS
+
+Design pattern Observer
+Exemple de Github : Dépot distant (obsrevable) notifie multiple dépôts locaux (observers) abonnés
+
+Dans les services, réponse des requêtes HTTP sont des obsrevables.
+Tous les webComponents qui ont subscribé pourront être notifiés des modifications de flux de données (stream?).
+
+let observable = new Observable( (observer) => {
+    // methods emits notifications
+    observer.next(MYDATA);
+    observer.error(...);
+    observer.complete(...)
+})
+
+
+// Utilisation par un observer
+observable.subscribe(
+    (data) => {
+        // data : data stream sent by method next
+    },
+    (err) => {
+        // error method
+    },
+    () => {
+        // complete
+    }
+)
+
+
+
+
+WebComponents
+-----
+
+Maintenabilité, Réutilisabilté, Encapsulation, Scalabilité, 1Class=1role
+Mettre en application de ces concepts côté front
+Analogie avec l'instanciation de classes (1class=1webcomponent)
+
+1 WC généré sur la base de 4 technos :
+- custom element
+- html template
+- shadow dom : encapsulation CSS et JS (par défaut si incompatibilité, il faut un polyfill pour émuler le comportement du shadowdom)
+- HTML imports
+
+Emulation shadowdom par Ng
+  Element host : ajout attributs _nghost-{RANDOMID}-c0
+  Elements du template : ajout attributs _ngcomponent-{RANDOMID}-c0
+  Dans le CSS, sélecteur CSS combiné avec sélecteur attribut
+
+
+
+Angular
+-----
+karma.conf.js Tests unitaires
+Jasmine library for e2e
+
+angular.json
+  @schematics : description du process d'installation (lignes de code à ajouter dans l'app angular par exemple). Lu lors de la commande "ng add"
+  "fileReplacements" : replacement env files
+
+main.js
+
+  if (environment.production) {
+    enableProdMode(); // minification du code css/js suppression commentaires
+  }
+
+Module @NgModule
+  declarations: Composants du module et d'autres modules
+  imports: Composants provenant d'autres modules, ils doivent être exportés,
+  bootstrap: module de démarrage de l'app
+
+index.html
+  width=device-width (taille viewport = taille device)
+
+
+
+
+
+Création library
+-----
+# ng generate library grafik // création d'une library
+# ng build grafik => /dist apparaît avec library grafik
+# npm publish puis npm install dans l'app principale
+
+
+
+
+
+Architecture
+-----
+https://angular.io/guide/architecture#whats-next
+Directives de structure ngIf/ngFor
+Directives d'attribut ngClass
+Webcomponents
+
+Property binding []
+Event binding ()
+
+Dependancy Injection
+Chaque module dispose de son propre sytème d'injection
+Avec le Decorator @Injectable Ng crée un singleton
+
+Exemples de gestion de modules
+Modules de service (ex: Guards)
+Modules de components (pour la performance, demander au Router de charger une fois qu'on utilise)
+Module Fn (ex: module calculette, lazyloading)
+
+UI Module (réutilisabilité d'une app à l'autre, components: header/nav/footer...)
+Login Module (réutilisabilité et loading à l'initialisation de l'app)
+Prestation Module (pour des raisons de reutilisabilité et perfo lazy loading)
+Clients Module (IDEM)
+PageNotFound Module (réutilisabilité, perfo)
+Shared modules (éviter la future dépendance entre modules)
+
+Ne pas rendre les modules inter-dépendants
+
+ng g component ui/components/ui
+
+
+
+
+Glossaire
+-----
+
+<app-root> Host element
+aot ahead of time precompilation côté serveur
+
+
+
+
+
+Méthodo de conception et architecture
+-----
+
+Agilité : cycle cours pour identifier les problèmes rapidement
+Pq ça ne marche pas?
+Le principe de base, brainstorm idées, études concurrent. Transformation des idées en userStories.
+Découpage en tâches à estimer et à destination du backlog.
+
+Triangle
+Expression des besoins (variable)
+Délai
+Coût
+
+Principe 80/20 Quelles sont les 20% des pages les plus pertinentes ?
+Etablir un styleguide très tôt, et créer une library de composants graphiques
+
+
