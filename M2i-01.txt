@@ -11,8 +11,8 @@ Auto rename tag
 CSS peek
 Sass Variable Helper
 Material Icon theme
-
-
+SCSS IntelliSense
+https://marketplace.visualstudio.com/items?itemName=devboosts.angular-productivity-pack
 
 
 
