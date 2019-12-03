@@ -5,7 +5,6 @@ import { PageLoginComponent } from './login/pages/page-login/page-login.componen
 
 
 const routes: Routes = [
-  { path: 'login', component: PageLoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'prestations', loadChildren: () => import('./prestations/prestations.module').then(mod => mod.PrestationsModule) },
   { path: 'clients', loadChildren: () => import('./clients/clients.module').then(mod => mod.ClientsModule) },

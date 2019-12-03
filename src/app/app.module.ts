@@ -14,11 +14,11 @@ import { LoginModule } from './login/login.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
     UiModule,
-    LoginModule
+    LoginModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
