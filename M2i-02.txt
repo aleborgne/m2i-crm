@@ -66,3 +66,11 @@ RouterModule.forChild(routes)
 On utilisera forRoot(routes) dans le module principal.
 
 CommonModule importe toutes les directives basiques ngIf, ngFor,...
+
+
+
+
+Router - Preloading
+-----
+https://angular.io/guide/router#preloading-background-loading-of-feature-areas
+LazyLoad au début de l'application pour un render plus rapide, puis chargement des modules en lazyload en background.
