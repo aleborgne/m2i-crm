@@ -1,4 +1,24 @@
 Angular
 -----
 
-Style général > update angular.json
+Style général accessible n'importe où dans l'app
+A ajouter dans angular.json :
+  "stylePreprocessorOptions": {
+      "includePaths": [
+          "src/stylings"
+      ]
+  },
+
+
+
+
+
+Les composants "Page"
+-----
+1 Component par page (abstraction, composant parent)
+  Chaque élément graphique est un component (Tableau, button, bandeau)
+
+Avantages:
+clareté architecture avec un dossier Pages pour chaque module
+utilisation du Router qui utilise les components
+Component parent envoie des "data brutes" aux component enfants. C'est le controleur en gros.
