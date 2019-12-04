@@ -6,3 +6,18 @@ Quelle différence entre component "ui" et library "grafik"?
 How to JSON to Prestation[]
 Il faut utiliser un filtre RxJS pour que le flux JSON soit mappé en flux d'objet Prestation[] => operator map de RxJS
 C'est là que le  Object.assign(this, obj); dans le constructeur du model Prestation est utile. Progammation Objet.
+
+
+
+
+
+Pipes
+-----
+Modification de la Local ID
+fr-FR n'existe pas donc on déclare une nouvelle langue
+registerLocaleData(localeFr, 'fr');
+On remplace la variable LOCAL_ID au niveau root
+
+Attention aux perfs. Appels multiple des fonctions (positionnées dans la vue) à cause des lifecycles.
+NE JAMAIS APPELER DES FONCTIONS DIRECTEMENT DANS UNE VUE HTML. Angular actualise les vues de façon incalculable lors des lifecycles.
+On utilisera des pipes qui ne sont pas actualisés dans les lifecycles.
