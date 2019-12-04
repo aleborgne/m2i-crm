@@ -1,0 +1,8 @@
+Angular
+-----
+
+Quelle différence entre component "ui" et library "grafik"?
+
+How to JSON to Prestation[]
+Il faut utiliser un filtre RxJS pour que le flux JSON soit mappé en flux d'objet Prestation[] => operator map de RxJS
+C'est là que le  Object.assign(this, obj); dans le constructeur du model Prestation est utile. Progammation Objet.
