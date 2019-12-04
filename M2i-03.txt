@@ -31,7 +31,6 @@ Créer un pipe dans Share module et l'exporter (--export) pour l'utiliser dans d
 
 States
 -----
-
 Dans une app en prod on aurait [value]="state.key" et on aurait ajouté un fonction dans le service pour retourner la bonne valeur à la base de données.
 Mais pour des raison pratiques pour la formation, on évite de passer par cette étape. Donc [value]="state.value".
 <select>
@@ -39,3 +38,15 @@ Mais pour des raison pratiques pour la formation, on évite de passer par cette 
 </select>
 
 On fait la requête HTTP de modification du State, puis lors de la réponse du serveur on met à jour le front.
+
+
+
+
+
+Directive ng-content
+-----
+Cette directive prend le contenu placé dans les balises du webComponent Host. Elle n'est pas présente dans le DOM.
+S'il existe plusieurs <ng-content> La projection se fait dans la dernière balise du webcomponent enfant.
+
+On peut cibler des élement avec des selecteur <ng-content select="p"> la transclusion se fait alors dans la première balise.
+NE FONCTIONNE PAS AVEC LES SELECTEUR ID (#monID) MAIS FONCTIONNE AVEC LE SELECTEUR ATTRIBUT ([id="monID"])

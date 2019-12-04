@@ -11,6 +11,7 @@ import { PrestationsService } from './../../services/prestations.service';
 export class PageListPrestationsComponent implements OnInit {
   public collection: Prestation[];
   public states = State;
+  public headers = ['Type', 'Client', 'Nb Jours', 'TJM HT', 'Total HT', 'Total TTC', 'State'];
 
   constructor(private prestationService: PrestationsService) { }
 
