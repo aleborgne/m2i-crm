@@ -57,3 +57,9 @@ NE FONCTIONNE PAS AVEC LES SELECTEUR ID (#monID) MAIS FONCTIONNE AVEC LE SELECTE
 Change Detection
 -----
 A chaque LifeCycle, une fonction ChangeDetection est appelée sur chacune des vues pour les réactualiser.
+Dans l'architecture, les CD sont exécutés du component le plus haut vers ceux les plus bas.
+On peut changer le comportement pour éviter le CD sur TOUTES les vues. (ChangeDetectionStrategy: OnPush)
+3 conditions :
+Si la vue est mise à jour à partir d'un Event d'un @Input(), d'une maj Observable.
+
+Le pipe "async" récupère l'Observable, établit une souscription et la détruit.

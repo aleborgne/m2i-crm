@@ -10,13 +10,13 @@
       "client": "M. Martin"
     },
     {
-      "id": 2,
-      "typePresta": "formation",
-      "client": "M. Fournier",
       "nbJours": 10,
       "tjmHt": 800,
       "tauxTva": 20,
-      "state": "Option"
+      "state": "Annulé",
+      "id": 2,
+      "typePresta": "formation",
+      "client": "M. Fournier"
     }
   ],
   "clients": [
