@@ -24,3 +24,16 @@ NE JAMAIS APPELER DES FONCTIONS DIRECTEMENT DANS UNE VUE HTML. Angular actualise
 On utilisera des pipes qui ne sont pas actualisés dans les lifecycles.
 
 Créer un pipe dans Share module et l'exporter (--export) pour l'utiliser dans d'autes modules.
+
+
+
+
+
+States
+-----
+
+Dans une app en prod on aurait [value]="state.key" et on aurait ajouté un fonction dans le service pour retourner la bonne valeur à la base de données.
+Mais pour des raison pratiques pour la formation, on évite de passer par cette étape. Donc [value]="state.value".
+<select>
+  <option [value]="state.value" *ngFor="let state of states | keyvalue">{{ state.value }}</option>
+</select>
