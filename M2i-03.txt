@@ -50,3 +50,10 @@ S'il existe plusieurs <ng-content> La projection se fait dans la dernière balis
 
 On peut cibler des élement avec des selecteur <ng-content select="p"> la transclusion se fait alors dans la première balise.
 NE FONCTIONNE PAS AVEC LES SELECTEUR ID (#monID) MAIS FONCTIONNE AVEC LE SELECTEUR ATTRIBUT ([id="monID"])
+
+
+
+
+Change Detection
+-----
+A chaque LifeCycle, une fonction ChangeDetection est appelée sur chacune des vues pour les réactualiser.

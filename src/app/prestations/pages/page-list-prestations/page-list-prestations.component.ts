@@ -24,7 +24,8 @@ export class PageListPrestationsComponent implements OnInit {
 
   changeState(item: Prestation, event) {
     this.prestationService.update(item, event.target.value).subscribe((res: Prestation) => {
-      item = res;
+      // item = res; doesn't emit ngOnChanges event
+      item.state = res.state;
     });
   }
 }
