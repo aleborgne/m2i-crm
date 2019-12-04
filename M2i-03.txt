@@ -37,3 +37,5 @@ Mais pour des raison pratiques pour la formation, on évite de passer par cette 
 <select>
   <option [value]="state.value" *ngFor="let state of states | keyvalue">{{ state.value }}</option>
 </select>
+
+On fait la requête HTTP de modification du State, puis lors de la réponse du serveur on met à jour le front.

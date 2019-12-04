@@ -21,4 +21,9 @@ export class PageListPrestationsComponent implements OnInit {
     });
   }
 
+  changeState(item: Prestation, event) {
+    this.prestationService.update(item, event.target.value).subscribe((res: Prestation) => {
+      item = res;
+    });
+  }
 }

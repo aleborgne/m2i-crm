@@ -20,7 +20,7 @@
         <td>{{ item | total | currency:'EUR' }}</td>
         <td>{{ item | total: item.tauxTva | currency:'EUR' }}</td>
         <td>
-          <select>
+          <select (change)="changeState(item, $event)">
             <option *ngFor="let state of states | keyvalue" [selected]="state.value === item.state" [value]="state.value">{{ state.value }}</option>
           </select>
         </td>
