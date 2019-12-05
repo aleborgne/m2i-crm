@@ -32,3 +32,10 @@ Mais devient vite une usine à gaz si on utilise des flux de données.
 FormsModule: logique dans le template (pas top)
 ReactiveFormsModule: Depuis Angular 4, permet de faire de mettre la logique dans le TS
 directive ngValue permet de stocker un objet au lieu d'un string.
+
+
+
+
+
+Validators
+-----
