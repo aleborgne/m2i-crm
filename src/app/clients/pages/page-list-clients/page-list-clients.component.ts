@@ -1,8 +1,8 @@
-import { StateClient } from './../../../shared/enums/state-client.enum';
-import { Observable } from 'rxjs';
-import { ClientsService } from './../../services/clients.service';
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Client } from 'app/shared/models/client';
+import { Observable } from 'rxjs';
+import { StateClient } from './../../../shared/enums/state-client.enum';
+import { ClientsService } from './../../services/clients.service';
 
 @Component({
   selector: 'app-page-list-clients',
@@ -13,6 +13,8 @@ export class PageListClientsComponent implements OnInit {
   public collection$: Observable<Client[]>;
   public headers = ['Nom', 'Email', 'State'];
   public states = StateClient;
+  public route = 'add';
+  public label = 'Ajouter un client';
 
   constructor(private clientService: ClientsService, private cdr: ChangeDetectorRef) { }
 

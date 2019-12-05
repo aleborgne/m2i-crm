@@ -3,15 +3,15 @@ import { Injectable } from '@angular/core';
 import { Client } from 'app/shared/models/client';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { environment } from './../../../environments/environment';
-import { StateClient } from './../../shared/enums/state-client.enum';
+import { environment } from 'environments/environment';
+import { StateClient } from 'app/shared/enums/state-client.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientsService {
   private urlApi = environment.urlApi;
-  private pCollection: Observable<Client[]>;
+  private pCollection$: Observable<Client[]>;
 
   constructor(private http: HttpClient) {
     this.collection = this.http.get<Client[]>(`${this.urlApi}clients`).pipe(
@@ -20,11 +20,11 @@ export class ClientsService {
   }
 
   get collection(): Observable<Client[]> {
-    return this.pCollection;
+    return this.pCollection$;
   }
 
   set collection(param: Observable<Client[]>) {
-    this.pCollection = param;
+    this.pCollection$ = param;
   }
 
   updateState(param: Client, state: StateClient): Observable<Client> {

@@ -13,6 +13,9 @@ export class PageListPrestationsComponent implements OnInit {
   public collection$: Observable<Prestation[]>;
   public states = State;
   public headers = ['Type', 'Client', 'Nb Jours', 'TJM HT', 'Total HT', 'Total TTC', 'State'];
+  public route = 'add';
+  public label = 'Ajouter une prestation';
+
 
   constructor(private prestationService: PrestationsService, private cdr: ChangeDetectorRef) { }
 
