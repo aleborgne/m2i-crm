@@ -82,6 +82,7 @@ LazyLoad au début de l'application pour un render plus rapide, puis chargement 
 Tableau Prestations
 -----
 Fake server : https://github.com/typicode/json-server#getting-started
+json-server --watch mock_db/db.json
 
 Création du Module "share" dans lequel on place les enum, interfaces, directives, etc.
 Pas besoin de déclarer les enum car pas de Decorator.

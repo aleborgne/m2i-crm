@@ -21,9 +21,16 @@
   ],
   "clients": [
     {
+      "state": "Actif",
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Client",
+      "email": "clientbravo@mail.fr"
+    },
+    {
+      "state": "Inactif",
+      "id": 2,
+      "name": "Client Bravo",
+      "email": "clientbravo@mail.fr"
     }
   ]
 }

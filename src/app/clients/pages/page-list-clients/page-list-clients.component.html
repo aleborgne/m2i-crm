@@ -1,1 +1,11 @@
-<p>page-list-clients works!</p>
+<app-tableau-light [headers]=headers>
+  <tr *ngFor="let item of collection$ | async">
+    <td>{{ item.name }}</td>
+    <td>{{ item.email }}</td>
+    <td [appState]=item.state>
+      <select (change)="changeState(item, $event)">
+        <option *ngFor="let state of states | keyvalue" [selected]="state.value === item.state" [value]="state.value">{{ state.value }}</option>
+      </select>
+    </td>
+  </tr>
+</app-tableau-light>

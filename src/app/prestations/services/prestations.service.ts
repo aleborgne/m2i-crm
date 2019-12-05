@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { State } from 'src/app/shared/enums/state.enum';
-import { Prestation } from 'src/app/shared/models/prestation';
+import { State } from 'app/shared/enums/state.enum';
+import { Prestation } from 'app/shared/models/prestation';
 import { environment } from './../../../environments/environment';
 
 @Injectable({

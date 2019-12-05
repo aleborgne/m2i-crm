@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Prestation } from 'src/app/shared/models/prestation';
+import { Prestation } from 'app/shared/models/prestation';
 import { State } from './../../../shared/enums/state.enum';
 import { PrestationsService } from './../../services/prestations.service';
 
