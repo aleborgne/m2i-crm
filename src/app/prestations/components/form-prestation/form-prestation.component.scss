@@ -1,0 +1,10 @@
+@import 'theme';
+
+form {
+  .ng-invalid.ng-touched {
+    border-color: $color-error;
+  }
+  .ng-valid.ng-touched {
+    border-color: $color-success;
+  }
+}

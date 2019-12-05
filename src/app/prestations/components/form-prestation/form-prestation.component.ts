@@ -38,7 +38,7 @@ export class FormPrestationComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    this.nItem.emit(this.form.value);
   }
 
 }

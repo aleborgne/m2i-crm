@@ -17,6 +17,15 @@
       "id": 2,
       "typePresta": "formation",
       "client": "M. Fournier"
+    },
+    {
+      "nbJours": 8,
+      "tjmHt": 1000,
+      "tauxTva": 20,
+      "state": "Annulé",
+      "typePresta": "dfghj",
+      "client": "sdh",
+      "id": 3
     }
   ],
   "clients": [
