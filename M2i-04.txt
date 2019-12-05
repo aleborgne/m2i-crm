@@ -1,0 +1,34 @@
+Angular outputs
+-----
+
+Observable Cold : Si je souhaite récupérer des data, qd on subscribe on récupère le flux de données
+Si qqch change le flux de données à un momement dans l'app, par exemple on rajoute une data avec la methode next(data), on doit faire unsubscribe puis resubscribe pour récupérer le nouveau flux.
+Comparaison film :
+bobine d'images : flux de données
+bouton play : subscribe
+Qd on change la bobine, il faud obligatoirement rappuyer sur le bouton play.
+Le comportement natif de l'Observable de RxJS est froid.
+
+Observable Chaud : Il reste à l'écoute dans le cas où le flux de données est modifié
+Dans RxJS, le Subject permet l'initialisation à vide, il faut souscrire puis modifier le flux.
+Le BehaviorSubject (chaud) initialisation obligatoire. Stocke systématiquement le dernier flux qui lui est envoyé.
+ReplaySubject (ex: utile pour une fonction undo/redo)
+
+Output : transmission d'un flux de données de l'enfant vers le parent
+C'est un event qui récupère le flux de données $event puis le transmet ensuite à une méthode add().
+
+
+
+
+
+Forms
+-----
+Tuto à faire (Chronophage) :
+https://ultimatecourses.com/blog/angular-dynamic-components-forms
+Cette technique est utile lorsqu'on a un formulaire qui s'adapte à ce qui existe dans le backend.
+Exemple d'une formulaire différents suivant les droits d'utilisateur.
+Mais devient vite une usine à gaz si on utilise des flux de données.
+
+FormsModule: logique dans le template (pas top)
+ReactiveFormsModule: Depuis Angular 4, permet de faire de mettre la logique dans le TS
+directive ngValue permet de stocker un objet au lieu d'un string.
