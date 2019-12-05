@@ -20,6 +20,9 @@ export class PageListClientsComponent implements OnInit {
 
   ngOnInit() {
     this.collection$ = this.clientService.collection;
+
+    // Async add loader
+    // https://ultimatecourses.com/blog/angular-ngif-async-pipe
   }
 
   changeState(item: Client, event) {
