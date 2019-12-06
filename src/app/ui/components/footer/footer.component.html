@@ -1,1 +1,1 @@
-<p>footer works!</p>
+<p *ngIf="version$ | async as version">footer works! <span class="text-info">V {{ version }}</span></p>
