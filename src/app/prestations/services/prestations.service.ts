@@ -14,6 +14,10 @@ export class PrestationsService {
   private urlApi = environment.urlApi;
 
   constructor(private http: HttpClient) {
+    this.initCollection();
+  }
+
+  public initCollection() {
     this.collection = this.http.get<Prestation[]>(`${this.urlApi}prestations`).pipe(
       map(arr => arr.map(item => new Prestation(item)))
     );
@@ -27,15 +31,27 @@ export class PrestationsService {
     this.pCollection = param;
   }
 
-  public update(item: Prestation, state: State) {
+  public update(item: Prestation, state?: State) {
     // on ne modifie pas item directement pour ne pas altérer l'instance Prestation sur le front.
     // On attend la réponse du serveur qui retourne l'objet modifé récupéré dans le subscribe()
     const obj = {...item};
-    obj.state = state;
+    if (state) {
+      obj.state = state;
+    }
     return this.http.put(`${this.urlApi}prestations/${item.id}`, obj);
   }
 
   public add(item: Prestation) {
     return this.http.post(`${this.urlApi}prestations`, item);
+  }
+
+  public delete(item: any) {
+    return this.http.delete(`${this.urlApi}prestations/${item.id}`);
+  }
+
+  public getItemById(id: number): Observable<Prestation> {
+    return this.http.get(`${this.urlApi}prestations/${id}`).pipe(
+      map(item => new Prestation(item))
+    );
   }
 }

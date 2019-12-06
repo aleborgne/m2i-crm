@@ -12,6 +12,9 @@
           <option *ngFor="let state of states | keyvalue" [selected]="state.value === item.state" [value]="state.value">{{ state.value }}</option>
         </select>
       </td>
+      <td>
+        <app-action-bar (del)="delete(item)" (editer)="edit(item)"></app-action-bar>
+      </td>
     </tr>
   </app-tableau-light>
 

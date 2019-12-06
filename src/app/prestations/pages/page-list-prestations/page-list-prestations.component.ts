@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
+import { Router } from '@angular/router';
 import { Prestation } from 'app/shared/models/prestation';
+import { Observable } from 'rxjs/internal/Observable';
 import { State } from './../../../shared/enums/state.enum';
 import { PrestationsService } from './../../services/prestations.service';
 
@@ -17,7 +18,7 @@ export class PageListPrestationsComponent implements OnInit {
   public label = 'Ajouter une prestation';
 
 
-  constructor(private prestationService: PrestationsService, private cdr: ChangeDetectorRef) { }
+  constructor(private prestationService: PrestationsService, private cdr: ChangeDetectorRef, private router: Router) { }
 
   ngOnInit() {
     this.collection$ = this.prestationService.collection;
@@ -30,5 +31,20 @@ export class PageListPrestationsComponent implements OnInit {
       this.cdr.markForCheck(); // Redemander un Change detection pour éviter un bug de décalage asynchrone.
       // Le bug en question: https://netbasal.com/a-comprehensive-guide-to-angular-onpush-change-detection-strategy-5bac493074a4
     });
+  }
+
+  delete(item) {
+    console.log(item);
+    this.prestationService.delete(item).subscribe((res) => {
+      // traiter la response de l'api
+      this.prestationService.initCollection();
+      this.collection$ = this.prestationService.collection;
+      this.cdr.markForCheck();
+    });
+  }
+
+  edit(item) {
+    console.log(item);
+    this.router.navigate(['prestations/edit', item.id]);
   }
 }
